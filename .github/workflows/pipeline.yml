@@ -22,5 +22,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run tests
+      - name: Run Jest tests
         run: npm test
+
+      - name: Run Playwright e2e tests
+        run: npm run test:e2e
