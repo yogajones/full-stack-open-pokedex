@@ -55,5 +55,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: testing skip logic
-        if: ${{ contains(join(toJson(github.event.commits.*.message), ' '), '#skip') }}
-        run: echo "skip found"
+        if: ${{ !contains(join(toJson(github.event.commits.*.message), ' '), '#skip') }}
+        run: echo "skip not found"
