@@ -33,7 +33,9 @@ jobs:
         if: ${{ failure() }}
         with:
           severity: error
-          details: Build failed
+          text: Build failed.
+          description: 'The following commit by ${{ github.actor }} broke the build:'
+          details: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
       - name: Run Jest tests
@@ -52,7 +54,8 @@ jobs:
         if: ${{ success() && steps.deploy.outcome != 'skipped' }}
         with:
           severity: info
-          details: A new version of Pokedex deployed
+          text: A new version of Pokedex deployed.
+          description: Deployed to https://full-stack-open-pokedex-884y.onrender.com
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
