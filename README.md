@@ -2,6 +2,9 @@
 
 This repository is used for the CI/CD module of the Full stack open course 
 
+Ex 11.20 and 11.21 at [this repository](https://github.com/yogajones/bloglist-cicd).
+
+
 ## Commands
 
 Start by running `npm install` inside the project folder
